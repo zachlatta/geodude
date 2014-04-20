@@ -35,7 +35,7 @@ func main() {
 	tmpl(os.Stdout, resultTemplate, result)
 }
 
-const usageTemplate = `geodude is a command-line tool to geocode addresses
+const usageTemplate = `geodude is a tiny command-line tool to geocode addresses
 
 Usage:
 
