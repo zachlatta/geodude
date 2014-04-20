@@ -1,4 +1,4 @@
-# geocode-cli
+# Geodude
 
 Geodude is a tiny command-line tool to geocode addresses.
 
