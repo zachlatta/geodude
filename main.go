@@ -11,12 +11,10 @@ import (
 	"github.com/kellydunn/golang-geo"
 )
 
-type Result struct {
+type GeocodeResult struct {
 	Address string
 	Point   *geo.Point
 }
-
-var geocoder geo.Geocoder
 
 func main() {
 	flag.Usage = usage
@@ -27,23 +25,11 @@ func main() {
 		usage()
 	}
 
-	geocoder = new(geo.GoogleGeocoder)
-
 	query := strings.Join(args, " ")
 
-	point, err := geocoder.Geocode(query)
+	result, err := geocode(query, new(geo.GoogleGeocoder))
 	if err != nil {
 		printErr(err)
-	}
-
-	addr, err := geocoder.ReverseGeocode(point)
-	if err != nil {
-		printErr(err)
-	}
-
-	result := Result{
-		Address: addr,
-		Point:   point,
 	}
 
 	tmpl(os.Stdout, resultTemplate, result)
@@ -83,3 +69,22 @@ const resultTemplate = `Address: {{.Address}}
 Coordinates: {{.Point.Lat}}, {{.Point.Lng}}
 
 `
+
+func geocode(query string, geocoder geo.Geocoder) (*GeocodeResult, error) {
+	point, err := geocoder.Geocode(query)
+	if err != nil {
+		return nil, err
+	}
+
+	addr, err := geocoder.ReverseGeocode(point)
+	if err != nil {
+		return nil, err
+	}
+
+	result := &GeocodeResult{
+		Address: addr,
+		Point:   point,
+	}
+
+	return result, nil
+}
