@@ -1,5 +1,7 @@
 # geocode-cli
 
+Geodude is a tiny command-line tool to geocode addresses.
+
 Installation:
 
     $ go get github.com/zachlatta/geodude
