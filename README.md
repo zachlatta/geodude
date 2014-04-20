@@ -2,11 +2,11 @@
 
 Installation:
 
-    $ go get github.com/zachlatta/geocode-cli
+    $ go get github.com/zachlatta/geodude
 
 Usage:
 
-    $ geocode [address]
+    $ geodude [address]
 
 ## License
 
