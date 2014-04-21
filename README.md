@@ -1,14 +1,37 @@
 # Geodude
 
+<img src="http://i.imgur.com/IlE7oAi.png" alt="Geodude Icon" align="right" />
 Geodude is a tiny command-line tool to geocode addresses.
 
-Installation:
+#### Features
+
+* Geocodes and reverse geocodes addresses
+* Minimalist interface
+* Fast
+
+### Installation
 
     $ go get github.com/zachlatta/geodude
 
-Usage:
+### Usage
 
     $ geodude [address]
+
+### Examples
+
+```
+$ geodude 1600 amphitheatre parkway
+
+Address: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+Coordinates: 37.4219998, -122.0839596
+```
+
+```
+$ geodude 1 infinite loop
+
+Address: 1 Infinite Loop, Cupertino, CA 95014, USA
+Coordinates: 37.331741, -122.0303329
+```
 
 ## License
 
