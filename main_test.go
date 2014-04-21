@@ -31,3 +31,9 @@ func TestGeocode(t *testing.T) {
 			result.Point.Lng())
 	}
 }
+
+func BenchmarkGeocode(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		geocode("1600 amphitheatre parkway", new(geo.GoogleGeocoder))
+	}
+}
