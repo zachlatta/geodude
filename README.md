@@ -1,7 +1,7 @@
 # Geodude
 
 <img src="http://i.imgur.com/IlE7oAi.png" alt="Geodude Icon" align="right" />
-Geodude is a tiny command-line tool to geocode addresses.
+Geodude is a tiny command-line tool for geocoding addresses.
 
 #### Features
 
