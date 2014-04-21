@@ -17,7 +17,7 @@ Geodude is a tiny command-line tool to geocode addresses.
 
     $ geodude [address]
 
-### Examples
+#### Examples
 
 ```
 $ geodude 1600 amphitheatre parkway
