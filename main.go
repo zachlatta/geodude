@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"pkg/text/template"
 	"strings"
+	"text/template"
 
 	"github.com/kellydunn/golang-geo"
 )
