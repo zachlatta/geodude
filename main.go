@@ -11,7 +11,7 @@ import (
 	"github.com/kellydunn/golang-geo"
 )
 
-type GeocodeResult struct {
+type geocodeResult struct {
 	Address string
 	Point   *geo.Point
 }
@@ -70,7 +70,7 @@ Coordinates: {{.Point.Lat}}, {{.Point.Lng}}
 
 `
 
-func geocode(query string, geocoder geo.Geocoder) (*GeocodeResult, error) {
+func geocode(query string, geocoder geo.Geocoder) (*geocodeResult, error) {
 	point, err := geocoder.Geocode(query)
 	if err != nil {
 		return nil, err
@@ -81,7 +81,7 @@ func geocode(query string, geocoder geo.Geocoder) (*GeocodeResult, error) {
 		return nil, err
 	}
 
-	result := &GeocodeResult{
+	result := &geocodeResult{
 		Address: addr,
 		Point:   point,
 	}
