@@ -9,6 +9,12 @@ Geodude is a tiny command-line utility for geocoding addresses.
 * Minimalist interface
 * Fast
 
+#### Limitations
+
+* Geodude depends on the wonderful
+  [golang-geo](https://github.com/kellydunn/golang-geo) and is constrained by
+  the rate limits of the APIs used by it.
+
 ### Installation
 
     $ go get github.com/zachlatta/geodude
