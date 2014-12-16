@@ -44,7 +44,7 @@ func main() {
 	}
 }
 
-const usageTemplate = `Geodude is a tiny command-line utility for geocoding addresses.
+const usageTmpl = `Geodude is a tiny command-line utility for geocoding addresses.
 
 Usage:
 
@@ -63,7 +63,7 @@ func usage() {
 }
 
 func printUsage(w io.Writer) {
-	tmpl(w, usageTemplate, nil)
+	tmpl(w, usageTmpl, nil)
 }
 
 func tmpl(w io.Writer, text string, data interface{}) {
