@@ -16,7 +16,12 @@ type geocodeResult struct {
 	Point   *geo.Point
 }
 
+var (
+	prettyPrint bool
+)
+
 func main() {
+	flag.BoolVar(&prettyPrint, "p", false, "pretty print")
 	flag.Usage = usage
 	flag.Parse()
 
@@ -32,14 +37,23 @@ func main() {
 		printErr(err)
 	}
 
-	tmpl(os.Stdout, resultTemplate, result)
+	if prettyPrint {
+		tmpl(os.Stdout, prettyResultTmpl, result)
+	} else {
+		tmpl(os.Stdout, resultTmpl, result)
+	}
 }
 
 const usageTemplate = `Geodude is a tiny command-line utility for geocoding addresses.
 
 Usage:
 
-  geodude [address]
+  geodude [OPTION] [address]
+
+Options:
+
+  -p
+        pretty print output
 
 `
 
@@ -65,7 +79,9 @@ func printErr(err error) {
 	os.Exit(2)
 }
 
-const resultTemplate = `Address: {{.Address}}
+const resultTmpl = "{{.Point.Lat}}\t{{.Point.Lng}}\t{{.Address}}\n"
+
+const prettyResultTmpl = `Address: {{.Address}}
 Coordinates: {{.Point.Lat}}, {{.Point.Lng}}
 
 `
