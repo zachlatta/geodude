@@ -22,19 +22,19 @@ Geodude is a tiny command-line utility for geocoding addresses.
 
 ### Usage
 
-    $ geodude [address]
+    $ geodude [OPTION] [address]
 
 #### Examples
 
 ```
 $ geodude 1600 amphitheatre parkway
-
-Address: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
-Coordinates: 37.4219998, -122.0839596
+37.422611       -122.0840577    1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
 ```
 
+Pretty printing:
+
 ```
-$ geodude 1 infinite loop
+$ geodude -p 1 infinite loop
 
 Address: 1 Infinite Loop, Cupertino, CA 95014, USA
 Coordinates: 37.331741, -122.0303329
