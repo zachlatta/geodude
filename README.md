@@ -1,5 +1,4 @@
-# Geodude [![Build Status](https://drone.io/github.com/zachlatta/geodude/status.png)](https://drone.io/github.com/zachlatta/geodude/latest) ![Analytics](https://ga-beacon.appspot.com/UA-34529482-6/geodude/readme?pixel)
-
+# Geodude [![Build Status](https://drone.io/github.com/zachlatta/geodude/status.png)](https://drone.io/github.com/zachlatta/geodude/latest)
 
 <img src="http://i.imgur.com/IlE7oAi.png" alt="Geodude Icon" align="right" />
 Geodude is a tiny command-line utility for geocoding addresses.
